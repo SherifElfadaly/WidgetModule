@@ -37,27 +37,4 @@ class WidgetTypeRepository extends AbstractRepository
 		$theme = $theme ?: \CMS::coreModules()->getActiveTheme()->module_key;
 		return $this->findBy('theme', $theme);
 	}
-
-	/**
-	 * Return listing of all widget templates belnogs
-	 * to the active theme.
-	 * 
-	 * @return array
-	 */
-	public function getWidgetTemplates()
-	{
-		$full_path = app_path('Modules/' . \CMS::coreModules()->getActiveTheme()->module_name . '/Resources/Views/templates/widgets');
-		$files     = [];
-		if (is_dir($full_path))
-		{
-			$files = scandir($full_path);
-			unset($files[0]);
-			unset($files[1]);
-			foreach($files as &$file)
-			{
-				$file = str_replace('.blade.php','',$file);
-			}
-		}
-		return $files;
-	}
 }
