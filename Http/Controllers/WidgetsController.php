@@ -32,7 +32,7 @@ class WidgetsController extends BaseController {
 	public function getShow($widgetTypeId)
 	{
 		$widgetType = \CMS::widgetTypes()->find($widgetTypeId);
-		$widgets    = \CMS::widgets()->getAllWidgets($widgetType->widget_type_name, 'en');
+		$widgets    = \CMS::widgets()->getAllWidgets($widgetType->widget_type_name);
 		$widgets->setPath(url('admin/widget/show', [$widgetTypeId]));
 
 		return view('widget::widgets.viewwidget', compact('widgets', 'widgetType'));
