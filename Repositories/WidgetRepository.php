@@ -36,6 +36,8 @@ class WidgetRepository extends AbstractRepository
 	public function getAllWidgets($widgetTypeName, $language = false, $perPage = 15)
 	{	
 		$widgetType = \CMS::widgetTypes()->first('widget_type_name', $widgetTypeName);
+		if ( ! $widgetType) return [];
+		
 		$widgets    = \CMS::widgets()->paginateBy('widget_type_id', $widgetType->id, $perPage);
 
 		return $this->getWidgetTranslations($widgets, $language);

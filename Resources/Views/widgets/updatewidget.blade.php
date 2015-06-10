@@ -26,7 +26,7 @@
     <div class="form-group">
       <label for="widget_image">Widget Image</label>
       @if($widget->widgetImage)
-        <a href="{{ url('admin/gallery/preview', $widget->widgetImage->id) }}" target="_blank">
+        <a href="{{ url('admin/gallery/show', $widget->widgetImage->id) }}" target="_blank">
           <img class="img-responsive" src="{{ $widget->widgetImage->path }}" width="200" height="200" id="widget_image">
         </a>
       @else
@@ -38,7 +38,7 @@
 
     <form method="post">
       <input name="_token" type="hidden" value="{{ csrf_token() }}">
-      <input type="hidden" name="image">
+      <input type="hidden" name="image" value="{{ $widget->widgetImage->id }}">
       
       <div class="form-group">
         <label for="slug">Widget Slug</label>

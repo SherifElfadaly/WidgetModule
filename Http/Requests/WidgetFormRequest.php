@@ -27,7 +27,7 @@ class WidgetFormRequest extends Request {
 		'slug'        => 'required|max:150|unique:content_items,id,' . $this->get('id'),
 		'title'       => 'required|max:255',
 		'description' => 'required|max:255',
-		'link'        => 'url|max:150',
+		'link'        => 'max:150',
 		];
 	}
 

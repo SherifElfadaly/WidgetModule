@@ -60,6 +60,7 @@ class WidgetsController extends BaseController {
 	{
 		$data['user_id']        = \Auth::user()->id;
 		$data['link']           = strlen(trim($request->link)) ? $request->link : "#";
+		$data['link']           = realpath($data['link']) && $data['link'] !== '/' ? $data['link'] : url($data['link']);
 		$data['widget_type_id'] = $widgetTypeId;
 		$widget                 = \CMS::widget()->createWidget(array_merge($request->all(), $data));
 
@@ -90,6 +91,7 @@ class WidgetsController extends BaseController {
 	public function postEdit(WidgetFormRequest $request, $id)
 	{
 		$data['link'] = strlen(trim($request->link)) ? $request->link : "#";
+		$data['link'] = realpath($data['link']) && $data['link'] !== '/' ? $data['link'] : url($data['link']);
 		$widget       = \CMS::widgets()->updateWidget($id, array_merge($request->all(), $data));
 		return redirect()->back()->with('message', 'Widget updated succssefuly');
 	}
