@@ -14,22 +14,22 @@
 			</thead>
 			<tbody>
 				@foreach($widgetTypes as $widgetType)
-				<tr>
-					<th>{{ $widgetType->id }}</th>
-					<th>{{ $widgetType->widget_type_name }}</th>
-					<th>
-						@if(\CMS::permissions()->can('show', 'Widgets'))
-							<a 
-							class ="btn btn-default" 
-							href  ='{{ url("admin/widget/show", $widgetType->id) }}' 
-							role  ="button">
-							Widgets
-							</a> 
-						@endif
-					</th>
-				</tr>
+					<tr>
+						<th>{{ $widgetType->id }}</th>
+						<th>{{ $widgetType->widget_type_name }}</th>
+						<th>
+							@if(\CMS::permissions()->can('show', 'Widgets'))
+								<a 
+								class ="btn btn-default" 
+								href  ='{{ url("admin/widget/show", $widgetType->id) }}' 
+								role  ="button">
+								Widgets
+								</a> 
+							@endif
+						</th>
+					</tr>
+				@endforeach
 			</tbody>
-			@endforeach
 		</table>
 	</div>
 </div>
