@@ -1,6 +1,6 @@
 <?php namespace App\Modules\Widget\Repositories;
 
-use App\AbstractRepositories\AbstractRepository;
+use App\Modules\Core\AbstractRepositories\AbstractRepository;
 
 class WidgetTypeRepository extends AbstractRepository
 {	

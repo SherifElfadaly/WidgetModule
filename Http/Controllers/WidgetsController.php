@@ -1,6 +1,6 @@
 <?php namespace App\Modules\Widget\Http\Controllers;
 
-use App\Http\Controllers\BaseController;
+use App\Modules\Core\Http\Controllers\BaseController;
 use App\Modules\Widget\Http\Requests\WidgetFormRequest;
 use Illuminate\Http\Request;
 
