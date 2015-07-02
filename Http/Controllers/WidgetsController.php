@@ -45,8 +45,9 @@ class WidgetsController extends BaseController {
 	 */
 	public function getCreate()
 	{
+		$links                   = \CMS::menu()->getLinks();
 		$widgetImageMediaLibrary = \CMS::galleries()->getMediaLibrary('photo', true, 'widgetImageMediaLibrary');
-		return view('widget::widgets.addwidget' ,compact('widgetImageMediaLibrary'));
+		return view('widget::widgets.addwidget' ,compact('widgetImageMediaLibrary', 'links'));
 	}
 
 	/**
@@ -76,9 +77,10 @@ class WidgetsController extends BaseController {
 	public function getEdit($id)
 	{
 		$widget                  = \CMS::widgets()->getWidget($id);
+		$links                   = \CMS::menu()->getLinks();
 		$widgetImageMediaLibrary = \CMS::galleries()->getMediaLibrary('photo', true, 'widgetImageMediaLibrary');
 
-		return view('widget::widgets.updatewidget', compact('widget', 'widgetImageMediaLibrary'));
+		return view('widget::widgets.updatewidget', compact('widget', 'widgetImageMediaLibrary', 'links'));
 	}
 
 	/**

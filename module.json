@@ -3,7 +3,7 @@
 	"slug": "widget",
 	"version": "1.0",
 	"description": "This is the description for the Widget module.",
-	"repo_link": "https:\/\/github.com\/SherifElfadaly\/WidgetModule.git",
+	"repo_link": "https://github.com/SherifElfadaly/WidgetModule.git",
 	"type" : "plugin",
 	"enabled": true, 
 	"module_parts": ["Widgets", "WidgetTypes"],

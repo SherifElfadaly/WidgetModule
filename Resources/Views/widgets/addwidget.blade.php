@@ -74,20 +74,22 @@
       </div>
 
       <div class="form-group">
-              <label for="link">Link: <i>If you want to "#" it leave it blank </i></label>
-              <div class="input-group">
-                <span class="input-group-addon">@</span>
-                <input 
-                type             ="text" 
-                class            ="form-control" 
-                name             ="link" 
-                value            ="{{ old('link') }}" 
-                placeholder      ="Add Link here .." 
-                aria-describedby ="sizing-addon2"
-                id               ="link" 
-                >
-              </div>
-            </div>
+        <label for="link">Link: <i>If you want to "#" it leave it blank </i></label>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input 
+          type             ="text" 
+          class            ="form-control" 
+          name             ="link" 
+          value            ="{{ old('link') }}" 
+          placeholder      ="Add Link here .." 
+          aria-describedby ="sizing-addon2"
+          id               ="link" 
+          >
+        </div>
+      </div>
+
+      @include('menus::parts.linksgenerator')
 
       <button type="submit" class="btn btn-primary form-control">Add Widget</button>
     </form>
@@ -95,4 +97,5 @@
 </div>
 
 @include('widget::widgets.assets.addwidgetimage')
+@include('menus::menuitems.assets.selectlink')
 @stop

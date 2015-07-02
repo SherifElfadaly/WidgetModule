@@ -38,7 +38,7 @@
 
     <form method="post">
       <input name="_token" type="hidden" value="{{ csrf_token() }}">
-      <input type="hidden" name="image" value="{{ $widget->widgetImage->id }}">
+      <input type="hidden" name="image" value="{{ $widget->image }}">
       
       <div class="form-group">
         <label for="slug">Widget Slug</label>
@@ -95,10 +95,13 @@
         </div>
       </div>
 
+      @include('menus::parts.linksgenerator')
+      
       <button type="submit" class="btn btn-primary form-control">Update Widget</button>
     </form>
   </div>
 </div>
 
 @include('widget::widgets.assets.addwidgetimage')
+@include('menus::menuitems.assets.selectlink')
 @stop
